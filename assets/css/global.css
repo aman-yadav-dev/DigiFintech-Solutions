@@ -18,14 +18,14 @@ h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-primary);
     color: var(--color-text-primary);
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.15;
     margin-bottom: var(--space-2);
 }
 
-h1 { font-size: var(--font-size-h1); }
-h2 { font-size: var(--font-size-h2); }
-h3 { font-size: var(--font-size-h3); }
-h4 { font-size: clamp(1.25rem, 2vw, 1.5rem); } /* Kept hardcoded since no var was added for h4, or could add var */
+h1 { font-size: var(--font-size-h1); line-height: 1.1; }
+h2 { font-size: var(--font-size-h2); line-height: 1.15; }
+h3 { font-size: var(--font-size-h3); line-height: 1.2; }
+h4 { font-size: var(--font-size-h4); line-height: 1.25; }
 
 p {
     margin-bottom: var(--space-3);
