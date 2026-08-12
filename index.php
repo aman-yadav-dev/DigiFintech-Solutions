@@ -151,81 +151,53 @@ include 'includes/header.php';
     </div>
 </section>
 
-<section id="bfsi" class="section bfsi-section">
-    <div class="container bfsi-container">
-        <div class="section-header">
-            <span class="section-eyebrow">Industry Focus</span>
-            <h2>BFSI Digital Acquisition</h2>
-            <p class="text-secondary">Financial services represent our core area of expertise. We power growth campaigns across a wide spectrum of digital financial products.</p>
+<section class="section industries" id="industries" aria-labelledby="industries-heading">
+    <div class="container">
+        <div class="section-top">
+            <div>
+                <span class="eyebrow">02 / BFSI industries</span>
+                <h2 id="industries-heading" class="section-heading">
+                    BFSI Digital Acquisition
+                </h2>
+                <p class="section-intro">
+                    Financial services represent our core area of expertise. We power growth campaigns across a wide spectrum of digital financial products.
+                </p>
+            </div>
+            <span class="section-index">DGF / 002</span>
         </div>
-        
-        <div class="bfsi-grid reveal-stagger">
-            <!-- BFSI Category 1 -->
-            <div class="bfsi-item">
-                <div class="bfsi-item-header">
-                    <div class="bfsi-item-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24"><path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11m16-11v11M8 14v3m4-3v3m4-3v3"/></svg>
-                    </div>
-                    <span>Banking & Lending</span>
-                </div>
-                <ul class="bfsi-list">
-                    <li>Savings & Current Accounts</li>
-                    <li>Digital Banking Products</li>
-                    <li>Personal & Business Loans</li>
-                    <li>Credit-related Products</li>
-                </ul>
+        <div class="industry-layout">
+            <div class="industry-list" role="tablist" aria-label="BFSI industries">
+                <button class="industry-item active" type="button" role="tab" aria-selected="true" data-industry="0" data-title="Banking &amp; Lending" data-detail="Savings &amp; Current Accounts, Digital Banking Products, Personal &amp; Business Loans, and Credit-related Products.">
+                    <span class="industry-marker">01</span>
+                    <h3>Banking &amp; Lending</h3>
+                    <svg viewBox="0 0 18 18" aria-hidden="true"><path d="m6 3 5 5-5 5" /></svg>
+                </button>
+                <button class="industry-item" type="button" role="tab" aria-selected="false" data-industry="1" data-title="Investment" data-detail="Demat Accounts, Stock Broking, Mutual Funds, and Investment Platforms.">
+                    <span class="industry-marker">02</span>
+                    <h3>Investment</h3>
+                    <svg viewBox="0 0 18 18" aria-hidden="true"><path d="m6 3 5 5-5 5" /></svg>
+                </button>
+                <button class="industry-item" type="button" role="tab" aria-selected="false" data-industry="2" data-title="Insurance" data-detail="Insurance Products, Insurance Enquiries, Customer Acquisition, and Policy Lead Generation.">
+                    <span class="industry-marker">03</span>
+                    <h3>Insurance</h3>
+                    <svg viewBox="0 0 18 18" aria-hidden="true"><path d="m6 3 5 5-5 5" /></svg>
+                </button>
+                <button class="industry-item" type="button" role="tab" aria-selected="false" data-industry="3" data-title="Fintech &amp; Digital" data-detail="Financial Applications, Digital Financial Products, Payment Solutions, and NBFC Campaigns.">
+                    <span class="industry-marker">04</span>
+                    <h3>Fintech &amp; Digital</h3>
+                    <svg viewBox="0 0 18 18" aria-hidden="true"><path d="m6 3 5 5-5 5" /></svg>
+                </button>
             </div>
-
-            <!-- BFSI Category 2 -->
-            <div class="bfsi-item">
-                <div class="bfsi-item-header">
-                    <div class="bfsi-item-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                    </div>
-                    <span>Investment</span>
-                </div>
-                <ul class="bfsi-list">
-                    <li>Demat Accounts</li>
-                    <li>Stock Broking</li>
-                    <li>Mutual Funds</li>
-                    <li>Investment Platforms</li>
-                </ul>
-            </div>
-
-            <!-- BFSI Category 3 -->
-            <div class="bfsi-item">
-                <div class="bfsi-item-header">
-                    <div class="bfsi-item-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                    </div>
-                    <span>Insurance</span>
-                </div>
-                <ul class="bfsi-list">
-                    <li>Insurance Products</li>
-                    <li>Insurance Enquiries</li>
-                    <li>Customer Acquisition</li>
-                    <li>Policy Lead Generation</li>
-                </ul>
-            </div>
-
-            <!-- BFSI Category 4 -->
-            <div class="bfsi-item">
-                <div class="bfsi-item-header">
-                    <div class="bfsi-item-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
-                    </div>
-                    <span>Fintech & Digital</span>
-                </div>
-                <ul class="bfsi-list">
-                    <li>Financial Applications</li>
-                    <li>Digital Financial Products</li>
-                    <li>Payment Solutions</li>
-                    <li>NBFC Campaigns</li>
-                </ul>
+            <div class="industry-detail" role="tabpanel" aria-live="polite" data-industry-panel>
+                <span class="detail-kicker">Sector focus / 01</span>
+                <h3 data-industry-title>Banking &amp; Lending</h3>
+                <p data-industry-detail>
+                    Savings &amp; Current Accounts, Digital Banking Products, Personal &amp; Business Loans, and Credit-related Products.
+                </p>
+                <span class="detail-corner">DGF / BFSI</span>
             </div>
         </div>
-
-        <div class="bfsi-disclosure">
+        <div class="bfsi-disclosure" style="margin-top: 3rem; font-size: 0.85rem; color: var(--text-tertiary); max-width: 800px;">
             <strong>Important:</strong> Individual financial products are distributed as partner campaigns and marketing offerings. DigiFintech Solution Private Limited is a digital acquisition ecosystem, not a direct issuer or guarantor of regulated financial products unless explicitly authorized.
         </div>
     </div>
