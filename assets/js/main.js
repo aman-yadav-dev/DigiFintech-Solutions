@@ -3,28 +3,44 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Mobile Menu Toggle
+    // 1. Mobile Menu Toggle & Accessibility
     const menuToggle = document.querySelector('.mobile-menu-toggle');
     const mobileNav = document.getElementById('mobile-nav');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
 
     if (menuToggle && mobileNav) {
-        menuToggle.addEventListener('click', () => {
+        const toggleMenu = (forceClose = false) => {
             const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
             
-            // Toggle state
-            menuToggle.setAttribute('aria-expanded', !isExpanded);
+            if (forceClose && !isExpanded) return;
             
-            if (!isExpanded) {
+            const newState = forceClose ? false : !isExpanded;
+            
+            menuToggle.setAttribute('aria-expanded', newState);
+            
+            if (newState) {
                 mobileNav.removeAttribute('hidden');
-                // Optional: add class for animation
+                mobileNav.setAttribute('aria-hidden', 'false');
                 mobileNav.classList.add('is-open');
                 document.body.style.overflow = 'hidden'; // Prevent background scrolling
             } else {
-                // Optional: add class for animation closing
                 mobileNav.classList.remove('is-open');
+                mobileNav.setAttribute('aria-hidden', 'true');
                 mobileNav.setAttribute('hidden', 'true');
                 document.body.style.overflow = '';
             }
+        };
+
+        menuToggle.addEventListener('click', () => toggleMenu());
+
+        // Close on ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') toggleMenu(true);
+        });
+
+        // Close on link click
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => toggleMenu(true));
         });
     }
 

@@ -92,9 +92,18 @@ $canonical_url = $canonical_url ?? SITE_URL . $_SERVER['REQUEST_URI'];
                 </svg>
             </button>
         </div>
-        <!-- Mobile Navigation Container (hidden by default via JS) -->
-        <div id="mobile-nav" class="mobile-nav-container" hidden>
-            <!-- To be populated via JS or explicit HTML structure in phase 2 -->
+        <!-- Mobile Navigation Container -->
+        <div id="mobile-nav" class="mobile-nav-container" hidden aria-hidden="true">
+            <nav aria-label="Mobile Navigation">
+                <ul>
+                    <li><a href="#services" class="mobile-link">Services</a></li>
+                    <li><a href="#ecosystem" class="mobile-link">Ecosystem</a></li>
+                    <li><a href="#technology" class="mobile-link">Technology</a></li>
+                    <li><a href="#publishers" class="mobile-link">Publishers</a></li>
+                    <li><a href="#about" class="mobile-link">About</a></li>
+                    <li><a href="#contact" class="btn btn-primary mobile-link" style="margin-top: var(--space-2);">Get Started</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 

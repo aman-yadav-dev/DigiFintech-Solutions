@@ -16,6 +16,8 @@
     --color-accent-primary: #00F0FF; /* Electric Cyan */
     --color-accent-hover: #00C6D1;
     
+    --color-accent-secondary: #10B981; /* Restrained Emerald/Growth Green */
+    
     --color-success: #10B981;
     --color-error: #EF4444;
     --color-border: #374151;
@@ -24,6 +26,13 @@
     /* Typography */
     --font-primary: 'Outfit', system-ui, -apple-system, sans-serif;
     --font-secondary: 'Inter', system-ui, -apple-system, sans-serif;
+    
+    /* Fluid Typography (Viewport based scaling) */
+    --font-size-h1: clamp(2.5rem, 5vw + 1rem, 4rem);
+    --font-size-h2: clamp(2rem, 3vw + 1rem, 3rem);
+    --font-size-h3: clamp(1.5rem, 2vw + 1rem, 2.25rem);
+    --font-size-body: 1rem;
+    --font-size-sm: 0.875rem;
     
     /* Spacing (8px baseline) */
     --space-1: 0.5rem;   /* 8px */
@@ -49,17 +58,18 @@
     
     --shadow-sm: 0 1px 2px rgba(0,0,0,0.5);
     --shadow-md: 0 4px 6px rgba(0,0,0,0.4);
-    --shadow-glow: 0 0 15px rgba(0, 240, 255, 0.2);
+    --shadow-glow: 0 0 20px rgba(0, 240, 255, 0.15);
 
     /* Transitions */
-    --transition-fast: 150ms ease;
-    --transition-normal: 300ms ease;
-    --transition-slow: 500ms ease;
+    --transition-fast: 150ms ease-out;
+    --transition-normal: 300ms ease-out;
+    --transition-slow: 500ms ease-out;
 
     /* Z-Index Layers */
     --z-negative: -1;
     --z-normal: 1;
     --z-dropdown: 40;
     --z-sticky: 50;
+    --z-mobile-nav: 55;
     --z-modal: 60;
 }
