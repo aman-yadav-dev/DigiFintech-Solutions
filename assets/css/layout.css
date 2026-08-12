@@ -18,6 +18,13 @@
     padding-bottom: var(--space-12);
 }
 
+@media (min-width: 1024px) {
+    .section {
+        padding-top: var(--space-16);
+        padding-bottom: var(--space-16);
+    }
+}
+
 .section-sm {
     padding-top: var(--space-6);
     padding-bottom: var(--space-6);
