@@ -49,6 +49,8 @@
     <!-- Global JavaScript -->
     <script src="/assets/js/main.js" defer></script>
     <script src="/assets/js/animations.js" defer></script>
+    <script src="/assets/js/navigation.js" defer></script>
+    <script src="/assets/js/interactions.js" defer></script>
     
     <?php if (isset($extra_js)): ?>
         <?php foreach($extra_js as $js): ?>
