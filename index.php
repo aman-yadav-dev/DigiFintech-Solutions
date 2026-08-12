@@ -3,7 +3,7 @@
 
 $page_title = "DigiFintech Solution Private Limited | Digital Growth Ecosystem";
 $meta_desc = "Technology-driven digital growth and customer acquisition company. Connecting brands, technology, and publishers for measurable business growth.";
-
+$extra_css = ['assets/css/contact.css'];
 
 // Include the header which outputs the top half of the HTML document
 include 'includes/header.php';
@@ -18,12 +18,12 @@ include 'includes/header.php';
 <section class="hero" id="home" aria-labelledby="hero-heading">
     <div class="container hero-grid">
         <div class="hero-copy reveal">
-            <span class="eyebrow">Customer Acquisition Ecosystem</span>
+            <span class="eyebrow">DIGITAL GROWTH INFRASTRUCTURE</span>
             <h1 id="hero-heading" class="display">
-                Powering Digital Growth Through Performance, Technology & Partnerships
+                The operating layer behind <span style="color: #accc94;">digital growth</span>.
             </h1>
             <p class="hero-body">
-                We connect businesses, technology, and performance partners to drive measurable customer acquisition and sustainable digital growth.
+                DigiFintech Solutions helps fintech and BFSI brands, performance teams and publisher partners move from campaign intent to measurable customer action.
             </p>
             <div class="hero-actions">
                 <a class="button-primary" href="#contact" data-scroll-link>

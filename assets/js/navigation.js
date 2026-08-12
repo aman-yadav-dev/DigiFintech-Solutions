@@ -54,7 +54,7 @@
 
   document.addEventListener("click", function (event) {
     if (!drawer.classList.contains("open")) return;
-    if (event.target === drawer || event.target === toggle || drawer.contains(event.target)) return;
+    if (event.target === drawer || toggle.contains(event.target) || drawer.contains(event.target)) return;
     setMenu(false);
   });
 })();
