@@ -34,6 +34,7 @@ $canonical_url = $canonical_url ?? SITE_URL . $_SERVER['REQUEST_URI'];
     <link rel="stylesheet" href="/assets/css/global.css">
     <link rel="stylesheet" href="/assets/css/layout.css">
     <link rel="stylesheet" href="/assets/css/components.css">
+    <link rel="stylesheet" href="/assets/css/services.css">
     
     <?php if (isset($extra_css)): ?>
         <?php foreach($extra_css as $css): ?>
