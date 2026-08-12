@@ -78,68 +78,75 @@ include 'includes/header.php';
     </div>
 </section>
 
-<section id="services" class="section">
+<section class="section light-section" id="services" aria-labelledby="services-heading">
     <div class="container">
-        <div class="section-header">
-            <span class="section-eyebrow">Our Core Capabilities</span>
-            <h2>Comprehensive Digital Growth Solutions</h2>
-            <p class="text-secondary">We combine technology, distribution, and operations to create measurable growth across the entire customer acquisition journey.</p>
+        <div class="section-top">
+            <div>
+                <span class="eyebrow">01 / Our Core Capabilities</span>
+                <h2 id="services-heading" class="section-heading">
+                    Comprehensive Digital Growth Solutions
+                </h2>
+                <p class="section-intro">
+                    We combine technology, distribution, and operations to create measurable growth across the entire customer acquisition journey.
+                </p>
+            </div>
+            <span class="section-index">DGF / 001</span>
         </div>
-        
-        <div class="services-grid reveal-stagger">
-            <!-- Service 1: Performance Marketing -->
-            <article class="service-card">
-                <div class="service-icon" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 20h20v2H2v-2zm2-8h4v6H4v-6zm6-6h4v12h-4V6zm6 4h4v8h-4v-8z"/></svg>
-                </div>
+        <div class="capabilities-layout">
+            <div class="capability-feature">
+                <span class="feature-num">01 — FEATURED CAPABILITY</span>
                 <h3>Performance Marketing</h3>
-                <p>We design and manage performance-focused campaigns where marketing activity is directly connected to measurable business outcomes.</p>
-            </article>
-
-            <!-- Service 2: Lead Generation -->
-            <article class="service-card">
-                <div class="service-icon" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-                </div>
-                <h3>Lead Generation</h3>
-                <p>Scalable digital acquisition channels delivering targeted, validated leads with a focus on high conversion potential and quality over volume.</p>
-            </article>
-
-            <!-- Service 3: Affiliate & Publisher Network -->
-            <article class="service-card">
-                <div class="service-icon" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
-                </div>
-                <h3>Affiliate Ecosystem</h3>
-                <p>An expansive publisher network powered by advanced tracking, fraud prevention, and validation to distribute campaigns at scale.</p>
-            </article>
-
-            <!-- Service 4: Campaign Management -->
-            <article class="service-card">
-                <div class="service-icon" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg>
-                </div>
-                <h3>Campaign Management</h3>
-                <p>End-to-end alignment between client objectives and publisher execution, supported by real-time tracking and transparent reporting.</p>
-            </article>
-
-            <!-- Service 5: Customer Operations (BPO) -->
-            <article class="service-card">
-                <div class="service-icon" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
-                </div>
-                <h3>Customer Operations</h3>
-                <p>Inbound and outbound support combining lead verification, application assistance, and customer retention for complete acquisition journeys.</p>
-            </article>
-
-            <!-- Service 6: Mobile App Acquisition -->
-            <article class="service-card">
-                <div class="service-icon" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
-                </div>
-                <h3>App Acquisition</h3>
-                <p>Data-driven install and user acquisition campaigns optimized for acquiring relevant, high-LTV users rather than simply maximizing installation volume.</p>
-            </article>
+                <p>
+                    We design and manage performance-focused campaigns where marketing activity is directly connected to measurable business outcomes.
+                </p>
+                <a href="#technology" class="feature-arrow" aria-label="Explore performance tracking" data-scroll-link>
+                    <svg viewBox="0 0 28 28" aria-hidden="true">
+                        <path d="M5 23 23 5M8 5h15v15" />
+                    </svg>
+                </a>
+            </div>
+            <div class="capabilities-list">
+                <article class="capability-row">
+                    <span class="row-number">02</span>
+                    <div>
+                        <h4>Lead Generation</h4>
+                        <p>Scalable digital acquisition channels delivering targeted, validated leads with a focus on high conversion potential and quality over volume.</p>
+                    </div>
+                    <span class="row-symbol" aria-hidden="true">↗</span>
+                </article>
+                <article class="capability-row">
+                    <span class="row-number">03</span>
+                    <div>
+                        <h4>Affiliate Ecosystem</h4>
+                        <p>An expansive publisher network powered by advanced tracking, fraud prevention, and validation to distribute campaigns at scale.</p>
+                    </div>
+                    <span class="row-symbol" aria-hidden="true">○</span>
+                </article>
+                <article class="capability-row">
+                    <span class="row-number">04</span>
+                    <div>
+                        <h4>Campaign Management</h4>
+                        <p>End-to-end alignment between client objectives and publisher execution, supported by real-time tracking and transparent reporting.</p>
+                    </div>
+                    <span class="row-symbol" aria-hidden="true">≡</span>
+                </article>
+                <article class="capability-row">
+                    <span class="row-number">05</span>
+                    <div>
+                        <h4>Customer Operations</h4>
+                        <p>Inbound and outbound support combining lead verification, application assistance, and customer retention for complete acquisition journeys.</p>
+                    </div>
+                    <span class="row-symbol" aria-hidden="true">□</span>
+                </article>
+                <article class="capability-row">
+                    <span class="row-number">06</span>
+                    <div>
+                        <h4>App Acquisition</h4>
+                        <p>Data-driven install and user acquisition campaigns optimized for acquiring relevant, high-LTV users rather than simply maximizing installation volume.</p>
+                    </div>
+                    <span class="row-symbol" aria-hidden="true">⌁</span>
+                </article>
+            </div>
         </div>
     </div>
 </section>
