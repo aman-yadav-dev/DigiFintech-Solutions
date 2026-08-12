@@ -1,7 +1,16 @@
 <?php
+// Initialize session strictly for CSRF protection on the contact form
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
+
 $page_title = "DigiFintech Solution Private Limited | Digital Growth Ecosystem";
 $meta_desc = "Technology-driven digital growth and customer acquisition company. Connecting brands, technology, and publishers for measurable business growth.";
 
+$extra_css = ['assets/css/contact.css'];
 // Include the header which outputs the top half of the HTML document
 include 'includes/header.php';
 ?>
@@ -323,7 +332,102 @@ include 'includes/header.php';
     </div>
 </section>
 
+<section id="contact" class="section contact-section reveal">
+    <div class="container">
+        <div class="contact-layout">
+            <div class="contact-info">
+                <span class="section-eyebrow">Get In Touch</span>
+                <h2>Let's Discuss Your Growth</h2>
+                <p class="text-secondary">Whether you're a brand looking to acquire customers or a publisher seeking premium campaigns, our team is ready to help.</p>
+                
+                <div class="contact-trust-points">
+                    <div class="trust-point">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <span>support@digifintech.in</span>
+                    </div>
+                    <div class="trust-point">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <span>+91 97557 67170</span>
+                    </div>
+                    <div class="trust-point">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span>Rewa, Madhya Pradesh, India</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-card">
+                <form id="contactForm" method="POST" action="api/enquiry.php" novalidate>
+                    <!-- CSRF Token -->
+                    <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token'], ENT_QUOTES, 'UTF-8'); ?>">
+                    
+                    <!-- Honeypot -->
+                    <div class="honeypot-field" aria-hidden="true">
+                        <label for="website_url">Leave this field empty</label>
+                        <input type="text" id="website_url" name="website_url" tabindex="-1" autocomplete="off">
+                    </div>
+
+                    <div id="formAlert" class="form-alert form-alert-error" role="alert" tabindex="-1">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                        <span class="form-alert-text">An error occurred.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name" class="form-label">Full Name <span class="required" aria-hidden="true">*</span></label>
+                        <input type="text" id="name" name="name" class="form-control" required autocomplete="name">
+                        <div class="invalid-feedback" id="nameError"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address <span class="required" aria-hidden="true">*</span></label>
+                        <input type="email" id="email" name="email" class="form-control" required autocomplete="email">
+                        <div class="invalid-feedback" id="emailError"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Phone Number <span class="optional">(Optional)</span></label>
+                        <input type="tel" id="phone" name="phone" class="form-control" autocomplete="tel">
+                        <div class="invalid-feedback" id="phoneError"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="enquiry_type" class="form-label">I am a... <span class="required" aria-hidden="true">*</span></label>
+                        <select id="enquiry_type" name="enquiry_type" class="form-control" required>
+                            <option value="Brand/Advertiser">Brand / Advertiser</option>
+                            <option value="Publisher/Affiliate">Publisher / Affiliate Partner</option>
+                            <option value="Other">Other Enquiry</option>
+                        </select>
+                        <div class="invalid-feedback" id="typeError"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="form-label">How can we help you? <span class="required" aria-hidden="true">*</span></label>
+                        <textarea id="message" name="message" class="form-control" required></textarea>
+                        <div class="invalid-feedback" id="messageError"></div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-submit">
+                        <span class="btn-text">Send Message</span>
+                        <span class="btn-loader" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/></svg>
+                        </span>
+                    </button>
+                </form>
+
+                <div id="formSuccess" class="form-success-state" role="status" tabindex="-1">
+                    <div class="success-icon-wrapper" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <h3>Message Sent</h3>
+                    <p class="text-secondary">Thank you for reaching out. Our team will review your enquiry and get back to you shortly.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <?php
+$extra_js = ['assets/js/contact.js'];
 // Include the footer which outputs the bottom half of the HTML document
 include 'includes/footer.php';
 ?>

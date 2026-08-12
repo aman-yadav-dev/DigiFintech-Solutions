@@ -34,3 +34,7 @@ Thumbs.db
 config.local.php
 
 includes/config.php
+
+# Composer dependencies
+vendor/
+
