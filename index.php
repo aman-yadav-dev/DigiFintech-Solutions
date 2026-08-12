@@ -203,73 +203,71 @@ include 'includes/header.php';
     </div>
 </section>
 
-<section id="technology" class="section tech-section">
+<section class="section technology" id="technology" aria-labelledby="technology-heading">
     <div class="container">
-        <div class="section-header">
-            <span class="section-eyebrow">Technology & Tracking</span>
-            <h2>Transparent Campaign Ecosystems</h2>
-            <p class="text-secondary">Our systems and processes are designed around precise tracking, clean data, and automation to make campaign performance visible and actionable.</p>
+        <div class="section-top">
+            <div>
+                <span class="eyebrow">03 / Technology &amp; Tracking</span>
+                <h2 id="technology-heading" class="section-heading">
+                    Transparent Campaign Ecosystems
+                </h2>
+                <p class="section-intro">
+                    Our systems and processes are designed around precise tracking, clean data, and automation to make campaign performance visible and actionable.
+                </p>
+            </div>
+            <span class="section-index">DGF / 003</span>
         </div>
-
-        <div class="tech-grid reveal-stagger">
-            <div class="tech-features">
-                <div class="tech-feature-card">
-                    <div class="tech-feature-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24"><path d="M12 20v-6M6 20V10M18 20V4"/></svg>
-                    </div>
-                    <div class="tech-feature-content">
+        <div class="tech-layout">
+            <div class="tech-list">
+                <article class="tech-item">
+                    <span class="tech-icon" aria-hidden="true">
+                        <svg viewBox="0 0 18 18"><path d="M2 9h3l2-5 3 10 2-5h4" /></svg>
+                    </span>
+                    <div>
                         <h3>Performance Tracking</h3>
                         <p>Comprehensive lead, campaign, conversion, and publisher tracking to monitor real-time acquisition performance.</p>
                     </div>
-                </div>
-                
-                <div class="tech-feature-card">
-                    <div class="tech-feature-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                    </div>
-                    <div class="tech-feature-content">
-                        <h3>CRM & Data Integration</h3>
+                </article>
+                <article class="tech-item">
+                    <span class="tech-icon" aria-hidden="true">
+                        <svg viewBox="0 0 18 18"><ellipse cx="9" cy="4" rx="6" ry="2.5" /><path d="M3 4v5c0 1.4 2.7 2.5 6 2.5S15 10.4 15 9V4M3 9v5c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5V9" /></svg>
+                    </span>
+                    <div>
+                        <h3>CRM &amp; Data Integration</h3>
                         <p>Seamless CRM integration and custom data reporting to ensure tight alignment with internal client operations.</p>
                     </div>
-                </div>
-
-                <div class="tech-feature-card">
-                    <div class="tech-feature-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
-                    </div>
-                    <div class="tech-feature-content">
-                        <h3>Quality & Fraud Prevention</h3>
+                </article>
+                <article class="tech-item">
+                    <span class="tech-icon" aria-hidden="true">
+                        <svg viewBox="0 0 18 18"><path d="M9 2 15 4v4c0 4-2.5 6.5-6 8-3.5-1.5-6-4-6-8V4l6-2Z" /><path d="m6.5 9 1.7 1.7L12 7" /></svg>
+                    </span>
+                    <div>
+                        <h3>Quality &amp; Fraud Prevention</h3>
                         <p>Rigorous duplicate-data detection, device/IP-level monitoring, and suspicious activity identification to protect campaign integrity.</p>
                     </div>
-                </div>
+                </article>
             </div>
-
-            <!-- Decorative visual placeholder for Tech/Dashboard -->
-            <div class="tech-visual-container" aria-hidden="true" style="text-align: center; opacity: 0.8;">
-                <svg viewBox="0 0 400 300" role="presentation" aria-hidden="true" style="max-width: 100%; height: auto; border-radius: var(--radius-lg); background: var(--color-bg-surface); border: 1px solid var(--color-border); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-                    <rect x="20" y="20" width="360" height="40" rx="4" fill="rgba(255,255,255,0.05)"/>
-                    <rect x="40" y="32" width="60" height="16" rx="4" fill="var(--color-accent-primary)" opacity="0.8"/>
-                    <rect x="120" y="32" width="40" height="16" rx="4" fill="rgba(255,255,255,0.2)"/>
-                    
-                    <rect x="20" y="80" width="110" height="80" rx="8" fill="rgba(255,255,255,0.03)"/>
-                    <rect x="35" y="100" width="40" height="8" rx="4" fill="rgba(255,255,255,0.1)"/>
-                    <rect x="35" y="125" width="80" height="12" rx="4" fill="rgba(255,255,255,0.8)"/>
-                    
-                    <rect x="145" y="80" width="110" height="80" rx="8" fill="rgba(255,255,255,0.03)"/>
-                    <rect x="160" y="100" width="50" height="8" rx="4" fill="rgba(255,255,255,0.1)"/>
-                    <rect x="160" y="125" width="60" height="12" rx="4" fill="rgba(255,255,255,0.8)"/>
-
-                    <rect x="270" y="80" width="110" height="80" rx="8" fill="rgba(255,255,255,0.03)"/>
-                    <rect x="285" y="100" width="45" height="8" rx="4" fill="rgba(255,255,255,0.1)"/>
-                    <text x="285" y="140" fill="var(--color-accent-secondary)" font-size="24" font-weight="bold">↑</text>
-                    
-                    <path d="M20 220 Q 100 180 200 240 T 380 180" fill="none" stroke="var(--color-accent-primary)" stroke-width="3"/>
-                    <path d="M20 250 Q 100 210 200 270 T 380 210" fill="none" stroke="var(--color-accent-secondary)" stroke-width="2" opacity="0.5"/>
-                </svg>
+            <div class="pipeline" aria-label="Campaign technology flow">
+                <div class="pipeline-heading">
+                    <span>Campaign flow</span>
+                    <span>Live visibility</span>
+                </div>
+                <div class="pipeline-track">
+                    <div class="pipeline-node"><span>1</span>Campaign</div>
+                    <div class="pipeline-node"><span>2</span>Tracking</div>
+                    <div class="pipeline-node"><span>3</span>Validation</div>
+                    <div class="pipeline-node"><span>4</span>CRM</div>
+                    <div class="pipeline-node"><span>5</span>Reporting</div>
+                </div>
+                <div class="pipeline-foot">
+                    <strong>Quality is designed into the path.</strong>
+                    <span>Transparent campaign visibility / lead tracking / duplicate-data detection</span>
+                </div>
             </div>
         </div>
     </div>
 </section>
+
 
 <section id="publishers" class="section publishers-section">
     <div class="container">
