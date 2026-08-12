@@ -268,48 +268,56 @@ include 'includes/header.php';
     </div>
 </section>
 
-
-<section id="publishers" class="section publishers-section">
+<section class="section light-section" id="publishers" aria-labelledby="publishers-heading">
     <div class="container">
-        <div class="section-header">
-            <span class="section-eyebrow">Publisher Partner Program</span>
-            <h2>Grow With DigiFintech</h2>
-            <p class="text-secondary">We create a sustainable ecosystem where quality publishers receive premium campaigns and dedicated performance support.</p>
-        </div>
-
-        <div class="publishers-layout reveal-stagger">
-            <div class="publishers-box">
-                <h3>
-                    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    Publisher Benefits
-                </h3>
-                <ul class="check-list two-col">
-                    <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Multiple Campaigns</li>
-                    <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Competitive Payouts</li>
-                    <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Performance Tracking</li>
-                    <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Dedicated Support</li>
-                    <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Digital Reporting</li>
-                    <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Transparent Validation</li>
-                    <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Promotional Resources</li>
-                    <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Performance Incentives</li>
-                </ul>
+        <div class="section-top">
+            <div>
+                <span class="eyebrow">04 / Publisher Partner Program</span>
+                <h2 id="publishers-heading" class="section-heading">
+                    Grow With DigiFintech
+                </h2>
+                <p class="section-intro">
+                    We create a sustainable ecosystem where quality publishers receive premium campaigns and dedicated performance support.
+                </p>
             </div>
-
-            <div class="publishers-box">
-                <h3>
-                    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                    Who Can Join?
-                </h3>
-                <ul class="check-list">
-                    <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg> Affiliate & Digital Marketers</li>
-                    <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg> Lead-Generation Agencies</li>
-                    <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg> Social-Media Marketers & Influencers</li>
-                    <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg> Content Creators & Website Owners</li>
-                    <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg> Mobile App Owners</li>
-                </ul>
-                <div class="publisher-cta-wrapper">
-                    <a href="#publishers" class="btn btn-primary" style="width: 100%; justify-content: center;">Apply to Join Network</a>
+            <span class="section-index">DGF / 004</span>
+        </div>
+        <div class="publisher-layout">
+            <div>
+                <div class="join-panel">
+                    <span class="eyebrow">Partner Benefits</span>
+                    <h3>Bring the right audience into the growth loop.</h3>
+                    <p>
+                        Work with a team that values clear campaign context, reliable operations and useful reporting.
+                    </p>
+                    <a class="button-primary" href="#contact" data-scroll-link>
+                        Apply to Join Network
+                        <svg viewBox="0 0 16 16" aria-hidden="true">
+                            <path d="M4 12 12 4M5 4h7v7" />
+                        </svg>
+                    </a>
                 </div>
+                <div class="who-join">
+                    <span class="eyebrow">Who can join</span>
+                    <h3>Built for partners who know their audience.</h3>
+                    <div class="audience-list">
+                        <span class="audience-tag">Affiliate &amp; Digital Marketers</span>
+                        <span class="audience-tag">Lead-Generation Agencies</span>
+                        <span class="audience-tag">Social-Media Marketers</span>
+                        <span class="audience-tag">Content Creators &amp; Websites</span>
+                        <span class="audience-tag">Mobile App Owners</span>
+                    </div>
+                </div>
+            </div>
+            <div class="benefit-stack">
+                <div class="benefit-row"><span class="benefit-num">01</span><div><strong>Multiple Campaigns</strong></div></div>
+                <div class="benefit-row"><span class="benefit-num">02</span><div><strong>Competitive Payouts</strong></div></div>
+                <div class="benefit-row"><span class="benefit-num">03</span><div><strong>Performance Tracking</strong></div></div>
+                <div class="benefit-row"><span class="benefit-num">04</span><div><strong>Dedicated Support</strong></div></div>
+                <div class="benefit-row"><span class="benefit-num">05</span><div><strong>Digital Reporting</strong></div></div>
+                <div class="benefit-row"><span class="benefit-num">06</span><div><strong>Transparent Validation</strong></div></div>
+                <div class="benefit-row"><span class="benefit-num">07</span><div><strong>Promotional Resources</strong></div></div>
+                <div class="benefit-row"><span class="benefit-num">08</span><div><strong>Performance Incentives</strong></div></div>
             </div>
         </div>
     </div>
