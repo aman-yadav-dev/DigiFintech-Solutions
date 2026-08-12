@@ -19,14 +19,12 @@ document.addEventListener('DOMContentLoaded', () => {
             menuToggle.setAttribute('aria-expanded', newState);
             
             if (newState) {
-                mobileNav.removeAttribute('hidden');
                 mobileNav.setAttribute('aria-hidden', 'false');
                 mobileNav.classList.add('is-open');
                 document.body.style.overflow = 'hidden'; // Prevent background scrolling
             } else {
                 mobileNav.classList.remove('is-open');
                 mobileNav.setAttribute('aria-hidden', 'true');
-                mobileNav.setAttribute('hidden', 'true');
                 document.body.style.overflow = '';
             }
         };

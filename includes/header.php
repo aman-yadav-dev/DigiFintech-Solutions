@@ -93,7 +93,7 @@ $canonical_url = $canonical_url ?? SITE_URL . $_SERVER['REQUEST_URI'];
             </button>
         </div>
         <!-- Mobile Navigation Container -->
-        <div id="mobile-nav" class="mobile-nav-container" hidden aria-hidden="true">
+        <div id="mobile-nav" class="mobile-nav-container" aria-hidden="true">
             <nav aria-label="Mobile Navigation">
                 <ul>
                     <li><a href="#services" class="mobile-link">Services</a></li>
