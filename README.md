@@ -33,6 +33,10 @@ This repository contains the production source code for the DigiFintech Solution
 ## Deployment
 Upload the contents of this repository to any standard Apache/PHP hosting environment. The `.htaccess` file handles URL routing and caching rules.
 
+### Reverse Proxy & Load Balancer Requirements
+- **Direct Apache/PHP deployment**: `REMOTE_ADDR` works normally for rate limiting.
+- **Behind Cloudflare/reverse proxy/load balancer**: The infrastructure must be configured (e.g., via Apache `mod_remoteip` or Nginx `real_ip_module`) to restore the real client IP before PHP executes.
+- The PHP application itself intentionally does **not** blindly trust client-controlled forwarding headers (like `X-Forwarded-For`) to prevent IP spoofing attacks.
 ## Future Implementation Phases
 - **Phase 2**: Core Sections (Services, Ecosystem Diagram, BFSI)
 - **Phase 3**: Publisher Portal & Form Integrations

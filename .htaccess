@@ -6,12 +6,15 @@ RewriteEngine On
 
 # 2. Block direct access to included files, templates, config, etc.
 RewriteRule ^includes/ - [F,L]
-RewriteRule ^api/(?!submit-enquiry\.php$).* - [F,L]
+RewriteRule ^api/(?!enquiry\.php$|csrf\.php$).* - [F,L]
 
 # 3. Security headers (Requires mod_headers)
 <IfModule mod_headers.c>
     Header set X-Content-Type-Options "nosniff"
     Header set X-Frame-Options "SAMEORIGIN"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+    # Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" # Enable in production HTTPS
     Header set X-XSS-Protection "1; mode=block"
     # Header set Content-Security-Policy "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'"
 </IfModule>
