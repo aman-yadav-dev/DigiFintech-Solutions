@@ -4,7 +4,7 @@
 $page_title = "DigiFintech Solution Private Limited | Digital Growth Ecosystem";
 $meta_desc = "Technology-driven digital growth and customer acquisition company. Connecting brands, technology, and publishers for measurable business growth.";
 
-$extra_css = ['assets/css/contact.css'];
+
 // Include the header which outputs the top half of the HTML document
 include 'includes/header.php';
 ?>

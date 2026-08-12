@@ -31,11 +31,8 @@ $canonical_url = $canonical_url ?? SITE_URL . $_SERVER['REQUEST_URI'];
     <!-- CSS System -->
     <link rel="stylesheet" href="/assets/css/variables.css">
     <link rel="stylesheet" href="/assets/css/reset.css">
-    <link rel="stylesheet" href="/assets/css/global.css">
-    <link rel="stylesheet" href="/assets/css/layout.css">
-    <link rel="stylesheet" href="/assets/css/components.css">
-    <link rel="stylesheet" href="/assets/css/services.css">
-    <link rel="stylesheet" href="/assets/css/publishers.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
     
     <?php if (isset($extra_css)): ?>
         <?php foreach($extra_css as $css): ?>
