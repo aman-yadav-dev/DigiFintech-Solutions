@@ -15,102 +15,64 @@ include 'includes/header.php';
     Here we establish the structural placeholders to ensure the foundation works.
 -->
 
-<section id="hero" class="section">
-    <div class="container hero-layout">
-        <div class="hero-content">
-            <span class="hero-eyebrow">Customer Acquisition Ecosystem</span>
-            <h1>Powering Digital Growth Through Performance, Technology & Partnerships</h1>
-            <p class="text-secondary">We connect businesses, technology, and performance partners to drive measurable customer acquisition and sustainable digital growth.</p>
+<section class="hero" id="home" aria-labelledby="hero-heading">
+    <div class="container hero-grid">
+        <div class="hero-copy reveal">
+            <span class="eyebrow">Customer Acquisition Ecosystem</span>
+            <h1 id="hero-heading" class="display">
+                Powering Digital Growth Through Performance, Technology & Partnerships
+            </h1>
+            <p class="hero-body">
+                We connect businesses, technology, and performance partners to drive measurable customer acquisition and sustainable digital growth.
+            </p>
             <div class="hero-actions">
-                <a href="#contact" class="btn btn-primary">Partner With Us</a>
-                <a href="#publishers" class="btn btn-secondary">Join Publisher Network</a>
+                <a class="button-primary" href="#contact" data-scroll-link>
+                    Partner With Us
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <path d="M4 12 12 4M5 4h7v7" />
+                    </svg>
+                </a>
+                <a class="button-secondary" href="#publishers" data-scroll-link>
+                    Join Publisher Network
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <path d="m6 3 5 5-5 5" />
+                    </svg>
+                </a>
             </div>
+            <p class="hero-note mono">
+                Performance marketing / lead generation / partner ecosystems
+            </p>
         </div>
-        
-        <div class="hero-visual" aria-hidden="true">
-            <svg class="ecosystem-svg" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <radialGradient id="eco-glow" cx="50%" cy="50%" r="50%">
-                        <stop offset="0%" stop-color="var(--color-accent-primary)" stop-opacity="0.15" />
-                        <stop offset="100%" stop-color="var(--color-accent-primary)" stop-opacity="0" />
-                    </radialGradient>
-                    <linearGradient id="link-grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stop-color="var(--color-accent-primary)" stop-opacity="0.8" />
-                        <stop offset="100%" stop-color="var(--color-border)" stop-opacity="0.2" />
-                    </linearGradient>
-                    <linearGradient id="link-grad-2" x1="100%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" stop-color="var(--color-accent-primary)" stop-opacity="0.8" />
-                        <stop offset="100%" stop-color="var(--color-border)" stop-opacity="0.2" />
-                    </linearGradient>
-                    <linearGradient id="link-grad-3" x1="100%" y1="100%" x2="0%" y2="0%">
-                        <stop offset="0%" stop-color="var(--color-accent-primary)" stop-opacity="0.8" />
-                        <stop offset="100%" stop-color="var(--color-border)" stop-opacity="0.2" />
-                    </linearGradient>
-                    <linearGradient id="link-grad-4" x1="0%" y1="100%" x2="100%" y2="0%">
-                        <stop offset="0%" stop-color="var(--color-accent-primary)" stop-opacity="0.8" />
-                        <stop offset="100%" stop-color="var(--color-border)" stop-opacity="0.2" />
-                    </linearGradient>
-                </defs>
 
-                <!-- Background Glow -->
-                <circle cx="250" cy="250" r="220" fill="url(#eco-glow)" />
-                
-                <!-- Orbits / Rings -->
-                <circle cx="250" cy="250" r="162" class="eco-ring" />
-                <circle cx="250" cy="250" r="100" class="eco-ring-inner" />
-
-                <!-- Connective Data Lines -->
-                <path d="M 135 135 L 250 250" class="eco-path" stroke="url(#link-grad-1)" />
-                <path d="M 365 135 L 250 250" class="eco-path" stroke="url(#link-grad-2)" />
-                <path d="M 365 365 L 250 250" class="eco-path" stroke="url(#link-grad-3)" />
-                <path d="M 135 365 L 250 250" class="eco-path" stroke="url(#link-grad-4)" />
-                
-                <!-- Animated Data Flows -->
-                <line x1="135" y1="135" x2="250" y2="250" class="eco-flow flow-1" />
-                <line x1="365" y1="135" x2="250" y2="250" class="eco-flow flow-2" />
-                <line x1="250" y1="250" x2="365" y2="365" class="eco-flow flow-3" />
-                <line x1="250" y1="250" x2="135" y2="365" class="eco-flow flow-4" />
-
-                <!-- Node: Brands (Top Left) -->
-                <g class="eco-satellite" transform="translate(135, 135)">
-                    <circle cx="0" cy="0" r="45" class="eco-node-bg" />
-                    <circle cx="0" cy="0" r="36" class="eco-node-inner" />
-                    <text class="eco-text-node" x="0" y="4">Brands</text>
-                </g>
-
-                <!-- Node: Channels (Bottom Left) -->
-                <g class="eco-satellite" transform="translate(135, 365)">
-                    <circle cx="0" cy="0" r="45" class="eco-node-bg" />
-                    <circle cx="0" cy="0" r="36" class="eco-node-inner" />
-                    <text class="eco-text-node" x="0" y="4">Channels</text>
-                </g>
-
-                <!-- Node: Publishers (Top Right) -->
-                <g class="eco-satellite" transform="translate(365, 135)">
-                    <circle cx="0" cy="0" r="45" class="eco-node-bg" />
-                    <circle cx="0" cy="0" r="36" class="eco-node-inner" />
-                    <text class="eco-text-node" x="0" y="4">Publishers</text>
-                </g>
-
-                <!-- Node: Customers (Bottom Right) -->
-                <g class="eco-satellite" transform="translate(365, 365)">
-                    <circle cx="0" cy="0" r="45" class="eco-node-bg" />
-                    <circle cx="0" cy="0" r="36" class="eco-node-inner" />
-                    <text class="eco-text-node" x="0" y="4">Customers</text>
-                </g>
-
-                <!-- Center Node: DigiFintech Technology -->
-                <g class="eco-center">
-                    <rect x="180" y="180" width="140" height="140" rx="24" class="eco-center-bg" />
-                    <rect x="190" y="190" width="120" height="120" rx="16" class="eco-center-inner" />
-                    
-                    <!-- Tech Core Symbol -->
-                    <path d="M 250 215 L 265 235 L 250 255 L 235 235 Z" fill="var(--color-accent-primary)" opacity="0.9" />
-                    <circle cx="250" cy="235" r="4" fill="var(--color-bg-primary)" />
-                    
-                    <text class="eco-text-main" x="250" y="278">DigiFintech</text>
-                    <text class="eco-text-sub" x="250" y="294">TECHNOLOGY</text>
-                </g>
+        <div class="infrastructure-visual" aria-label="Abstract campaign flow visual">
+            <div class="visual-frame"></div>
+            <div class="visual-label">Growth infrastructure / 01</div>
+            <div class="visual-status">
+                <span class="status-dot"></span>
+                systems aligned
+            </div>
+            <svg class="flow-svg" viewBox="0 0 520 360" role="img" aria-label="Connected campaign, publisher, tracking and reporting nodes">
+                <path class="flow-path soft" d="M28 290 C115 250 114 110 225 105 S355 205 490 76" />
+                <path class="flow-path" d="M32 80 C125 170 180 38 288 112 S386 270 490 260" />
+                <path class="flow-path soft" d="M52 195 C130 190 160 260 255 245 S355 70 470 120" />
+                <circle class="flow-node" cx="32" cy="80" r="12" />
+                <circle class="flow-node-core" cx="32" cy="80" r="4" />
+                <circle class="flow-node" cx="225" cy="105" r="12" />
+                <circle class="flow-node-core" cx="225" cy="105" r="4" />
+                <circle class="flow-node" cx="288" cy="112" r="12" />
+                <circle class="flow-node-core" cx="288" cy="112" r="4" />
+                <circle class="flow-node" cx="255" cy="245" r="12" />
+                <circle class="flow-node-core" cx="255" cy="245" r="4" />
+                <circle class="flow-node" cx="490" cy="260" r="12" />
+                <circle class="flow-node-core" cx="490" cy="260" r="4" />
+                <circle class="flow-node" cx="490" cy="76" r="12" />
+                <circle class="flow-node-core" cx="490" cy="76" r="4" />
+                <text class="flow-caption" x="15" y="56">CAMPAIGN</text>
+                <text class="flow-caption-muted" x="204" y="82">PUBLISHER</text>
+                <text class="flow-caption" x="270" y="143">TRACKING</text>
+                <text class="flow-caption-muted" x="231" y="278">VALIDATION</text>
+                <text class="flow-caption" x="447" y="294">REPORTING</text>
+                <text class="flow-caption-muted" x="446" y="52">CRM</text>
             </svg>
         </div>
     </div>
