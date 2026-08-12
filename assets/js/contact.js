@@ -8,9 +8,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const formAlert = document.getElementById('formAlert');
     const formSuccess = document.getElementById('formSuccess');
     const btnSubmit = contactForm.querySelector('.btn-submit');
+    const csrfInput = document.getElementById('csrf_token');
 
     // Basic email validation regex
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let csrfFetched = false;
+
+    // Fetch CSRF token when user first interacts with the form
+    const fetchCsrfToken = async () => {
+        if (csrfFetched) return;
+        try {
+            const response = await fetch('api/csrf.php');
+            const data = await response.json();
+            if (data.csrf_token && csrfInput) {
+                csrfInput.value = data.csrf_token;
+                csrfFetched = true;
+            }
+        } catch (error) {
+            console.error('Failed to initialize form security.');
+        }
+    };
+
+    contactForm.addEventListener('focusin', fetchCsrfToken, { once: true });
+    contactForm.addEventListener('mouseenter', fetchCsrfToken, { once: true });
 
     contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -44,6 +64,14 @@ document.addEventListener('DOMContentLoaded', () => {
         // Prepare for submission
         setLoading(true);
 
+        // Fallback fetch if interaction events didn't trigger it
+        if (!csrfFetched) {
+            await fetchCsrfToken();
+            if (csrfInput && csrfInput.value) {
+                formData.set('csrf_token', csrfInput.value);
+            }
+        }
+
         try {
             const response = await fetch('api/enquiry.php', {
                 method: 'POST',
@@ -59,6 +87,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 showSuccess();
             } else {
                 showGlobalError(result.message || 'An error occurred. Please try again later.');
+                // In case of CSRF failure, refresh token for next try
+                if (response.status === 403) {
+                    csrfFetched = false;
+                    fetchCsrfToken();
+                }
             }
         } catch (error) {
             console.error('Submission error:', error);
@@ -77,6 +110,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 feedback.textContent = message;
             }
             input.setAttribute('aria-invalid', 'true');
+            // Ensure aria-describedby is pointing to the error container
+            const errorId = fieldId + 'Error';
+            input.setAttribute('aria-describedby', errorId);
         }
     }
 
@@ -85,6 +121,10 @@ document.addEventListener('DOMContentLoaded', () => {
         inputs.forEach(input => {
             input.classList.remove('is-invalid');
             input.removeAttribute('aria-invalid');
+            // We don't necessarily need to remove aria-describedby, just empty the text
+            const errorId = input.getAttribute('id') + 'Error';
+            const feedback = document.getElementById(errorId);
+            if (feedback) feedback.textContent = '';
         });
         
         if (formAlert) {
@@ -131,6 +171,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target.classList.contains('form-control')) {
             e.target.classList.remove('is-invalid');
             e.target.removeAttribute('aria-invalid');
+            const errorId = e.target.getAttribute('id') + 'Error';
+            const feedback = document.getElementById(errorId);
+            if (feedback) feedback.textContent = '';
         }
     });
 });

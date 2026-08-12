@@ -27,8 +27,7 @@
                 <div class="footer-col">
                     <h4>Contact</h4>
                     <ul>
-                        <li>Email: <a href="mailto:support@digifintech.in">support@digifintech.in</a></li>
-                        <li>Phone: +91 97557 67170</li>
+                        <li>Website: <a href="https://digifintech.in">digifintech.in</a></li>
                         <li>HQ: Rewa, Madhya Pradesh, India</li>
                     </ul>
                 </div>

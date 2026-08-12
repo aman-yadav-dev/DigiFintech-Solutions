@@ -34,15 +34,6 @@ if (!empty($_POST['website_url'])) {
     sendResponse('success', 'Your message has been sent successfully.');
 }
 
-// 4. Rate Limiting (Session/IP based)
-$ipAddress = $_SERVER['REMOTE_ADDR'] ?? '';
-$currentTime = time();
-if (isset($_SESSION['last_submit_time']) && ($currentTime - $_SESSION['last_submit_time']) < 30) {
-    // Less than 30 seconds since last submit
-    sendResponse('error', 'You are submitting too fast. Please wait a moment.', 429);
-}
-$_SESSION['last_submit_time'] = $currentTime;
-
 // Load Dependencies (Config & PHPMailer)
 if (!file_exists(__DIR__ . '/../includes/config.php')) {
     error_log('Configuration file missing.');
@@ -57,6 +48,46 @@ if (file_exists(__DIR__ . '/../vendor/autoload.php')) {
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+
+// Initialize PDO early for rate limiting
+$pdo = null;
+try {
+    $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8mb4";
+    $pdo = new PDO($dsn, DB_USER, DB_PASS, [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+        PDO::ATTR_EMULATE_PREPARES => false,
+    ]);
+} catch (PDOException $e) {
+    error_log('Database Connection Error: ' . $e->getMessage());
+    sendResponse('error', 'Service unavailable. Please try again later.', 500);
+}
+
+// 4. Rate Limiting (IP based via MySQL)
+$ipAddress = $_SERVER['REMOTE_ADDR'] ?? '0.0.0.0';
+try {
+    // Cleanup old rate limits (older than 24 hours) to prevent unbounded growth
+    $pdo->exec("DELETE FROM rate_limits WHERE last_submit_time < DATE_SUB(NOW(), INTERVAL 24 HOUR)");
+
+    // Check rate limit for this IP (1 submission per 30 seconds)
+    $stmt = $pdo->prepare("SELECT UNIX_TIMESTAMP(last_submit_time) as last_time FROM rate_limits WHERE ip_address = :ip");
+    $stmt->execute([':ip' => $ipAddress]);
+    $row = $stmt->fetch();
+    
+    $currentTime = time();
+    if ($row && ($currentTime - $row['last_time']) < 30) {
+        sendResponse('error', 'You are submitting too fast. Please wait a moment.', 429);
+    }
+    
+    // Update or insert rate limit record
+    $updStmt = $pdo->prepare("INSERT INTO rate_limits (ip_address) VALUES (:ip) ON DUPLICATE KEY UPDATE last_submit_time = CURRENT_TIMESTAMP");
+    $updStmt->execute([':ip' => $ipAddress]);
+
+} catch (PDOException $e) {
+    error_log('Rate Limit DB Error: ' . $e->getMessage());
+    // Fail closed or open? We fail closed to prevent spam if DB has an issue.
+    sendResponse('error', 'Service unavailable. Please try again later.', 500);
+}
 
 // 5. Input Extraction & Validation
 // Clean inputs and remove newlines to prevent email header injection
@@ -101,21 +132,13 @@ $emailSentStatus = 0;
 $dbId = null;
 
 try {
-    $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8mb4";
-    $pdo = new PDO($dsn, DB_USER, DB_PASS, [
-        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-        PDO::ATTR_EMULATE_PREPARES => false,
-    ]);
-
-    $stmt = $pdo->prepare("INSERT INTO enquiries (name, email, phone, enquiry_type, message, ip_address) VALUES (:name, :email, :phone, :enquiry_type, :message, :ip_address)");
+    $stmt = $pdo->prepare("INSERT INTO enquiries (name, email, phone, enquiry_type, message) VALUES (:name, :email, :phone, :enquiry_type, :message)");
     
     $stmt->bindParam(':name', $name);
     $stmt->bindParam(':email', $email);
     $stmt->bindParam(':phone', $phone);
     $stmt->bindParam(':enquiry_type', $type);
     $stmt->bindParam(':message', $message);
-    $stmt->bindParam(':ip_address', $ipAddress);
     
     $stmt->execute();
     $dbId = $pdo->lastInsertId();
