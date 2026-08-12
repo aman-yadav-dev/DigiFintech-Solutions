@@ -323,89 +323,101 @@ include 'includes/header.php';
     </div>
 </section>
 
-<section id="contact" class="section contact-section">
+<section class="section contact" id="contact" aria-labelledby="contact-heading">
     <div class="container">
+        <div class="section-top">
+            <div>
+                <span class="eyebrow">05 / Contact &amp; enquiry</span>
+                <h2 id="contact-heading" class="section-heading">
+                    Tell us where the growth system needs to work harder.
+                </h2>
+            </div>
+            <span class="section-index">DGF / 005</span>
+        </div>
         <div class="contact-layout">
-            <div class="contact-info">
-                <span class="section-eyebrow">Get In Touch</span>
-                <h2>Let's Discuss Your Growth</h2>
-                <p class="text-secondary">Whether you're a brand looking to acquire customers or a publisher seeking premium campaigns, our team is ready to help.</p>
-                
-                <div class="contact-trust-points">
-                    <div class="trust-point">
-                        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                        <span>digifintech.in</span>
-                    </div>
-                    <div class="trust-point">
-                        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                        <span>Rewa, Madhya Pradesh, India</span>
-                    </div>
-                </div>
+            <div class="contact-copy">
+                <p>
+                    Whether you represent a BFSI brand, performance team or
+                    publisher business, start with the context. We will route
+                    your enquiry to the right conversation.
+                </p>
+                <p class="mono contact-channel">ENQUIRY CHANNEL / READY</p>
             </div>
 
-            <div class="contact-form-card">
-                <form id="contactForm" method="POST" action="api/enquiry.php" novalidate>
+            <div>
+                <form
+                    id="contactForm"
+                    class="form-shell"
+                    action="api/enquiry.php"
+                    method="post"
+                    novalidate
+                    aria-label="DigiFintech enquiry form"
+                >
                     <!-- CSRF Token -->
                     <input type="hidden" name="csrf_token" id="csrf_token" value="">
-                    
+
                     <!-- Honeypot -->
-                    <div class="honeypot-field" aria-hidden="true">
-                        <label for="website_url">Leave this field empty</label>
-                        <input type="text" id="website_url" name="website_url" tabindex="-1" autocomplete="off">
+                    <div class="honeypot" aria-hidden="true" style="display: none;">
+                        <label for="website_url">Website</label>
+                        <input id="website_url" name="website_url" type="text" tabindex="-1" autocomplete="off" />
                     </div>
 
-                    <div id="formAlert" class="form-alert form-alert-error" role="alert" tabindex="-1">
+                    <div id="formAlert" class="form-alert form-alert-error" role="alert" tabindex="-1" style="display: none; margin-bottom: 2rem;">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
                         <span class="form-alert-text">An error occurred.</span>
                     </div>
 
-                    <div class="form-group">
-                        <label for="name" class="form-label">Full Name <span class="required" aria-hidden="true">*</span></label>
-                        <input type="text" id="name" name="name" class="form-control" required autocomplete="name">
-                        <div class="invalid-feedback" id="nameError"></div>
+                    <div class="form-grid">
+                        <div class="field">
+                            <label for="name">Name <span class="required" aria-hidden="true">*</span></label>
+                            <input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" required class="form-control" />
+                            <span class="form-error invalid-feedback" id="nameError" role="alert"></span>
+                        </div>
+                        <div class="field">
+                            <label for="email">Email <span class="required" aria-hidden="true">*</span></label>
+                            <input id="email" name="email" type="email" placeholder="you@company.com" autocomplete="email" required class="form-control" />
+                            <span class="form-error invalid-feedback" id="emailError" role="alert"></span>
+                        </div>
+                        <div class="field">
+                            <label for="phone">Phone</label>
+                            <input id="phone" name="phone" type="tel" placeholder="Your phone number" autocomplete="tel" class="form-control" />
+                            <span class="form-error invalid-feedback" id="phoneError" role="alert"></span>
+                        </div>
+                        <div class="field">
+                            <label for="enquiry_type">Enquiry type <span class="required" aria-hidden="true">*</span></label>
+                            <select id="enquiry_type" name="enquiry_type" required class="form-control">
+                                <option value="">Choose one</option>
+                                <option value="Brand/Advertiser">Brand / Advertiser</option>
+                                <option value="Publisher/Affiliate">Publisher / Affiliate Partner</option>
+                                <option value="Other">Other Enquiry</option>
+                            </select>
+                            <span class="form-error invalid-feedback" id="typeError" role="alert"></span>
+                        </div>
+                        <div class="field field-full">
+                            <label for="message">Message <span class="required" aria-hidden="true">*</span></label>
+                            <textarea id="message" name="message" placeholder="Tell us what you are building or looking to improve." required class="form-control"></textarea>
+                            <span class="form-error invalid-feedback" id="messageError" role="alert"></span>
+                        </div>
                     </div>
-
-                    <div class="form-group">
-                        <label for="email" class="form-label">Email Address <span class="required" aria-hidden="true">*</span></label>
-                        <input type="email" id="email" name="email" class="form-control" required autocomplete="email">
-                        <div class="invalid-feedback" id="emailError"></div>
+                    <div class="form-foot">
+                        <p class="form-note">
+                            Your details stay within this enquiry flow.<br />
+                            We will only use them to respond to your request.
+                        </p>
+                        <button class="button-primary btn-submit" type="submit">
+                            Send enquiry
+                            <svg viewBox="0 0 16 16" aria-hidden="true">
+                                <path d="M4 12 12 4M5 4h7v7" />
+                            </svg>
+                        </button>
                     </div>
-
-                    <div class="form-group">
-                        <label for="phone" class="form-label">Phone Number <span class="optional">(Optional)</span></label>
-                        <input type="tel" id="phone" name="phone" class="form-control" autocomplete="tel">
-                        <div class="invalid-feedback" id="phoneError"></div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="enquiry_type" class="form-label">I am a... <span class="required" aria-hidden="true">*</span></label>
-                        <select id="enquiry_type" name="enquiry_type" class="form-control" required>
-                            <option value="Brand/Advertiser">Brand / Advertiser</option>
-                            <option value="Publisher/Affiliate">Publisher / Affiliate Partner</option>
-                            <option value="Other">Other Enquiry</option>
-                        </select>
-                        <div class="invalid-feedback" id="typeError"></div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message" class="form-label">How can we help you? <span class="required" aria-hidden="true">*</span></label>
-                        <textarea id="message" name="message" class="form-control" required></textarea>
-                        <div class="invalid-feedback" id="messageError"></div>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary btn-submit">
-                        <span class="btn-text">Send Message</span>
-                        <span class="btn-loader" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/></svg>
-                        </span>
-                    </button>
                 </form>
 
-                <div id="formSuccess" class="form-success-state" role="status" tabindex="-1">
-                    <div class="success-icon-wrapper" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <div id="formSuccess" class="form-success-state" role="status" tabindex="-1" style="display: none; padding: 2rem; border-radius: 8px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1);">
+                    <div class="success-icon-wrapper" aria-hidden="true" style="color: #4ade80; margin-bottom: 1rem;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
                     </div>
-                    <h3>Message Sent</h3>
+                    <h3 style="margin-bottom: 0.5rem;">Message Sent</h3>
                     <p class="text-secondary">Thank you for reaching out. Our team will review your enquiry and get back to you shortly.</p>
                 </div>
             </div>
