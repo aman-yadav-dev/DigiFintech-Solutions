@@ -250,23 +250,23 @@ include 'includes/header.php';
                 </div>
             </div>
 
-            <!-- Optional visual placeholder for Tech/Dashboard -->
+            <!-- Decorative visual placeholder for Tech/Dashboard -->
             <div class="tech-visual-container" aria-hidden="true" style="text-align: center; opacity: 0.8;">
-                <svg viewBox="0 0 400 300" style="max-width: 100%; height: auto; border-radius: var(--radius-lg); background: var(--color-bg-surface); border: 1px solid var(--color-border); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                <svg viewBox="0 0 400 300" role="presentation" aria-hidden="true" style="max-width: 100%; height: auto; border-radius: var(--radius-lg); background: var(--color-bg-surface); border: 1px solid var(--color-border); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
                     <rect x="20" y="20" width="360" height="40" rx="4" fill="rgba(255,255,255,0.05)"/>
                     <rect x="40" y="32" width="60" height="16" rx="4" fill="var(--color-accent-primary)" opacity="0.8"/>
                     <rect x="120" y="32" width="40" height="16" rx="4" fill="rgba(255,255,255,0.2)"/>
                     
                     <rect x="20" y="80" width="110" height="80" rx="8" fill="rgba(255,255,255,0.03)"/>
-                    <text x="35" y="110" fill="var(--color-text-secondary)" font-size="12">Total Leads</text>
-                    <text x="35" y="140" fill="var(--color-text-primary)" font-size="24" font-weight="bold">10k+</text>
+                    <rect x="35" y="100" width="40" height="8" rx="4" fill="rgba(255,255,255,0.1)"/>
+                    <rect x="35" y="125" width="80" height="12" rx="4" fill="rgba(255,255,255,0.8)"/>
                     
                     <rect x="145" y="80" width="110" height="80" rx="8" fill="rgba(255,255,255,0.03)"/>
-                    <text x="160" y="110" fill="var(--color-text-secondary)" font-size="12">Active Pubs</text>
-                    <text x="160" y="140" fill="var(--color-text-primary)" font-size="24" font-weight="bold">300+</text>
+                    <rect x="160" y="100" width="50" height="8" rx="4" fill="rgba(255,255,255,0.1)"/>
+                    <rect x="160" y="125" width="60" height="12" rx="4" fill="rgba(255,255,255,0.8)"/>
 
                     <rect x="270" y="80" width="110" height="80" rx="8" fill="rgba(255,255,255,0.03)"/>
-                    <text x="285" y="110" fill="var(--color-text-secondary)" font-size="12">Conv Rate</text>
+                    <rect x="285" y="100" width="45" height="8" rx="4" fill="rgba(255,255,255,0.1)"/>
                     <text x="285" y="140" fill="var(--color-accent-secondary)" font-size="24" font-weight="bold">↑</text>
                     
                     <path d="M20 220 Q 100 180 200 240 T 380 180" fill="none" stroke="var(--color-accent-primary)" stroke-width="3"/>
@@ -288,35 +288,35 @@ include 'includes/header.php';
         <div class="publishers-layout">
             <div class="publishers-box">
                 <h3>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                     Publisher Benefits
                 </h3>
                 <ul class="check-list two-col">
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Multiple Campaigns</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Competitive Payouts</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Performance Tracking</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Dedicated Support</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Digital Reporting</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Transparent Validation</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Promotional Resources</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Performance Incentives</li>
+                    <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Multiple Campaigns</li>
+                    <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Competitive Payouts</li>
+                    <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Performance Tracking</li>
+                    <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Dedicated Support</li>
+                    <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Digital Reporting</li>
+                    <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Transparent Validation</li>
+                    <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Promotional Resources</li>
+                    <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Performance Incentives</li>
                 </ul>
             </div>
 
             <div class="publishers-box">
                 <h3>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                     Who Can Join?
                 </h3>
                 <ul class="check-list">
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg> Affiliate & Digital Marketers</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg> Lead-Generation Agencies</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg> Social-Media Marketers & Influencers</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg> Content Creators & Website Owners</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg> Mobile App Owners</li>
+                    <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg> Affiliate & Digital Marketers</li>
+                    <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg> Lead-Generation Agencies</li>
+                    <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg> Social-Media Marketers & Influencers</li>
+                    <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg> Content Creators & Website Owners</li>
+                    <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg> Mobile App Owners</li>
                 </ul>
                 <div class="publisher-cta-wrapper">
-                    <a href="#contact" class="btn btn-primary" style="width: 100%; justify-content: center;">Apply to Join Network</a>
+                    <a href="#publishers" class="btn btn-primary" style="width: 100%; justify-content: center;">Apply to Join Network</a>
                 </div>
             </div>
         </div>
