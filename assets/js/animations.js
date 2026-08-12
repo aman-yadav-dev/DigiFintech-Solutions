@@ -19,10 +19,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const revealCallback = (entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Add visible class to trigger CSS transition
-                entry.target.classList.add('is-visible');
-                // Unobserve once revealed to improve performance
-                observer.unobserve(entry.target);
+                const target = entry.target;
+                
+                if (target.classList.contains('reveal-stagger')) {
+                    // Stagger children
+                    Array.from(target.children).forEach((child, index) => {
+                        child.classList.add('reveal');
+                        child.style.transitionDelay = `${index * 0.1}s`;
+                        // Trigger reflow
+                        void child.offsetWidth;
+                        child.classList.add('is-visible');
+                    });
+                } else {
+                    target.classList.add('is-visible');
+                }
+                
+                // Unobserve once revealed
+                observer.unobserve(target);
             }
         });
     };
@@ -37,7 +50,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const revealObserver = new IntersectionObserver(revealCallback, revealOptions);
 
     // Select and observe all reveal elements
-    document.querySelectorAll('.reveal').forEach(el => {
+    document.querySelectorAll('.reveal, .reveal-stagger, .section-header, .hero-content, .hero-visual').forEach(el => {
+        if (el.classList.contains('section-header') || el.classList.contains('hero-content') || el.classList.contains('hero-visual')) {
+            el.classList.add('reveal');
+        }
         revealObserver.observe(el);
     });
 });

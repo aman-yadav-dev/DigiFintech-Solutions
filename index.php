@@ -15,7 +15,7 @@ include 'includes/header.php';
     Here we establish the structural placeholders to ensure the foundation works.
 -->
 
-<section id="hero" class="section reveal">
+<section id="hero" class="section">
     <div class="container hero-layout">
         <div class="hero-content">
             <span class="hero-eyebrow">Customer Acquisition Ecosystem</span>
@@ -116,7 +116,7 @@ include 'includes/header.php';
     </div>
 </section>
 
-<section id="services" class="section reveal">
+<section id="services" class="section">
     <div class="container">
         <div class="section-header">
             <span class="section-eyebrow">Our Core Capabilities</span>
@@ -124,7 +124,7 @@ include 'includes/header.php';
             <p class="text-secondary">We combine technology, distribution, and operations to create measurable growth across the entire customer acquisition journey.</p>
         </div>
         
-        <div class="services-grid">
+        <div class="services-grid reveal-stagger">
             <!-- Service 1: Performance Marketing -->
             <article class="service-card">
                 <div class="service-icon" aria-hidden="true">
@@ -182,7 +182,7 @@ include 'includes/header.php';
     </div>
 </section>
 
-<section id="bfsi" class="section bfsi-section reveal">
+<section id="bfsi" class="section bfsi-section">
     <div class="container bfsi-container">
         <div class="section-header">
             <span class="section-eyebrow">Industry Focus</span>
@@ -190,7 +190,7 @@ include 'includes/header.php';
             <p class="text-secondary">Financial services represent our core area of expertise. We power growth campaigns across a wide spectrum of digital financial products.</p>
         </div>
         
-        <div class="bfsi-grid">
+        <div class="bfsi-grid reveal-stagger">
             <!-- BFSI Category 1 -->
             <div class="bfsi-item">
                 <div class="bfsi-item-header">
@@ -262,7 +262,7 @@ include 'includes/header.php';
     </div>
 </section>
 
-<section id="technology" class="section tech-section reveal">
+<section id="technology" class="section tech-section">
     <div class="container">
         <div class="section-header">
             <span class="section-eyebrow">Technology & Tracking</span>
@@ -270,7 +270,7 @@ include 'includes/header.php';
             <p class="text-secondary">Our systems and processes are designed around precise tracking, clean data, and automation to make campaign performance visible and actionable.</p>
         </div>
 
-        <div class="tech-grid">
+        <div class="tech-grid reveal-stagger">
             <div class="tech-features">
                 <div class="tech-feature-card">
                     <div class="tech-feature-icon" aria-hidden="true">
@@ -330,7 +330,7 @@ include 'includes/header.php';
     </div>
 </section>
 
-<section id="publishers" class="section publishers-section reveal">
+<section id="publishers" class="section publishers-section">
     <div class="container">
         <div class="section-header">
             <span class="section-eyebrow">Publisher Partner Program</span>
@@ -338,7 +338,7 @@ include 'includes/header.php';
             <p class="text-secondary">We create a sustainable ecosystem where quality publishers receive premium campaigns and dedicated performance support.</p>
         </div>
 
-        <div class="publishers-layout">
+        <div class="publishers-layout reveal-stagger">
             <div class="publishers-box">
                 <h3>
                     <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -376,7 +376,7 @@ include 'includes/header.php';
     </div>
 </section>
 
-<section id="contact" class="section contact-section reveal">
+<section id="contact" class="section contact-section">
     <div class="container">
         <div class="contact-layout">
             <div class="contact-info">
