@@ -28,39 +28,89 @@ include 'includes/header.php';
         </div>
         
         <div class="hero-visual" aria-hidden="true">
-            <svg class="ecosystem-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-                <!-- Connective Lines -->
-                <path class="eco-line" d="M 200 60 L 200 130" />
-                <path class="eco-line" d="M 200 270 L 200 340" />
-                <path class="eco-line" d="M 130 200 L 60 200" />
-                <path class="eco-line" d="M 270 200 L 340 200" />
+            <svg class="ecosystem-svg" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <radialGradient id="eco-glow" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="var(--color-accent-primary)" stop-opacity="0.15" />
+                        <stop offset="100%" stop-color="var(--color-accent-primary)" stop-opacity="0" />
+                    </radialGradient>
+                    <linearGradient id="link-grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="var(--color-accent-primary)" stop-opacity="0.8" />
+                        <stop offset="100%" stop-color="var(--color-border)" stop-opacity="0.2" />
+                    </linearGradient>
+                    <linearGradient id="link-grad-2" x1="100%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="var(--color-accent-primary)" stop-opacity="0.8" />
+                        <stop offset="100%" stop-color="var(--color-border)" stop-opacity="0.2" />
+                    </linearGradient>
+                    <linearGradient id="link-grad-3" x1="100%" y1="100%" x2="0%" y2="0%">
+                        <stop offset="0%" stop-color="var(--color-accent-primary)" stop-opacity="0.8" />
+                        <stop offset="100%" stop-color="var(--color-border)" stop-opacity="0.2" />
+                    </linearGradient>
+                    <linearGradient id="link-grad-4" x1="0%" y1="100%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="var(--color-accent-primary)" stop-opacity="0.8" />
+                        <stop offset="100%" stop-color="var(--color-border)" stop-opacity="0.2" />
+                    </linearGradient>
+                </defs>
+
+                <!-- Background Glow -->
+                <circle cx="250" cy="250" r="220" fill="url(#eco-glow)" />
                 
-                <!-- Animated Flow Lines -->
-                <path class="eco-flow" d="M 200 60 L 200 130" />
-                <path class="eco-flow" d="M 340 200 L 270 200" />
-                <path class="eco-flow" d="M 200 270 L 200 340" />
-                <path class="eco-flow" d="M 60 200 L 130 200" />
+                <!-- Orbits / Rings -->
+                <circle cx="250" cy="250" r="162" class="eco-ring" />
+                <circle cx="250" cy="250" r="100" class="eco-ring-inner" />
 
-                <!-- Node: Brands (Top) -->
-                <circle class="eco-node" cx="200" cy="60" r="40" />
-                <text class="eco-node-text" x="200" y="60">Brands</text>
+                <!-- Connective Data Lines -->
+                <path d="M 135 135 L 250 250" class="eco-path" stroke="url(#link-grad-1)" />
+                <path d="M 365 135 L 250 250" class="eco-path" stroke="url(#link-grad-2)" />
+                <path d="M 365 365 L 250 250" class="eco-path" stroke="url(#link-grad-3)" />
+                <path d="M 135 365 L 250 250" class="eco-path" stroke="url(#link-grad-4)" />
+                
+                <!-- Animated Data Flows -->
+                <line x1="135" y1="135" x2="250" y2="250" class="eco-flow flow-1" />
+                <line x1="365" y1="135" x2="250" y2="250" class="eco-flow flow-2" />
+                <line x1="250" y1="250" x2="365" y2="365" class="eco-flow flow-3" />
+                <line x1="250" y1="250" x2="135" y2="365" class="eco-flow flow-4" />
 
-                <!-- Node: Publishers (Right) -->
-                <circle class="eco-node" cx="340" cy="200" r="40" />
-                <text class="eco-node-text" x="340" y="200">Publishers</text>
+                <!-- Node: Brands (Top Left) -->
+                <g class="eco-satellite" transform="translate(135, 135)">
+                    <circle cx="0" cy="0" r="45" class="eco-node-bg" />
+                    <circle cx="0" cy="0" r="36" class="eco-node-inner" />
+                    <text class="eco-text-node" x="0" y="4">Brands</text>
+                </g>
 
-                <!-- Node: Customers (Bottom) -->
-                <circle class="eco-node" cx="200" cy="340" r="40" />
-                <text class="eco-node-text" x="200" y="340">Customers</text>
+                <!-- Node: Channels (Bottom Left) -->
+                <g class="eco-satellite" transform="translate(135, 365)">
+                    <circle cx="0" cy="0" r="45" class="eco-node-bg" />
+                    <circle cx="0" cy="0" r="36" class="eco-node-inner" />
+                    <text class="eco-text-node" x="0" y="4">Channels</text>
+                </g>
 
-                <!-- Node: Platforms (Left) -->
-                <circle class="eco-node" cx="60" cy="200" r="40" />
-                <text class="eco-node-text" x="60" y="200">Channels</text>
+                <!-- Node: Publishers (Top Right) -->
+                <g class="eco-satellite" transform="translate(365, 135)">
+                    <circle cx="0" cy="0" r="45" class="eco-node-bg" />
+                    <circle cx="0" cy="0" r="36" class="eco-node-inner" />
+                    <text class="eco-text-node" x="0" y="4">Publishers</text>
+                </g>
 
-                <!-- Center Node: Technology -->
-                <rect class="eco-node" x="130" y="130" width="140" height="140" rx="16" />
-                <text class="eco-node-text" x="200" y="190" style="font-size: 16px; fill: var(--color-accent-primary);">DigiFintech</text>
-                <text class="eco-node-text" x="200" y="215" style="font-size: 12px; font-weight: normal; fill: var(--color-text-secondary);">Technology</text>
+                <!-- Node: Customers (Bottom Right) -->
+                <g class="eco-satellite" transform="translate(365, 365)">
+                    <circle cx="0" cy="0" r="45" class="eco-node-bg" />
+                    <circle cx="0" cy="0" r="36" class="eco-node-inner" />
+                    <text class="eco-text-node" x="0" y="4">Customers</text>
+                </g>
+
+                <!-- Center Node: DigiFintech Technology -->
+                <g class="eco-center">
+                    <rect x="180" y="180" width="140" height="140" rx="24" class="eco-center-bg" />
+                    <rect x="190" y="190" width="120" height="120" rx="16" class="eco-center-inner" />
+                    
+                    <!-- Tech Core Symbol -->
+                    <path d="M 250 215 L 265 235 L 250 255 L 235 235 Z" fill="var(--color-accent-primary)" opacity="0.9" />
+                    <circle cx="250" cy="235" r="4" fill="var(--color-bg-primary)" />
+                    
+                    <text class="eco-text-main" x="250" y="278">DigiFintech</text>
+                    <text class="eco-text-sub" x="250" y="294">TECHNOLOGY</text>
+                </g>
             </svg>
         </div>
     </div>
