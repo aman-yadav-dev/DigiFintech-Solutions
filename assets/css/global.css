@@ -22,10 +22,10 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: var(--space-2);
 }
 
-h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
-h2 { font-size: clamp(2rem, 4vw, 3rem); }
-h3 { font-size: clamp(1.5rem, 3vw, 2.25rem); }
-h4 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
+h1 { font-size: var(--font-size-h1); }
+h2 { font-size: var(--font-size-h2); }
+h3 { font-size: var(--font-size-h3); }
+h4 { font-size: clamp(1.25rem, 2vw, 1.5rem); } /* Kept hardcoded since no var was added for h4, or could add var */
 
 p {
     margin-bottom: var(--space-3);
