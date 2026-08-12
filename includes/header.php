@@ -69,44 +69,63 @@ $canonical_url = $canonical_url ?? SITE_URL . $_SERVER['REQUEST_URI'];
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <header class="site-header" id="header">
-        <div class="container header-inner">
-            <a href="/" class="logo" aria-label="DigiFintech Home">
-                DigiFintech.
+    <header class="topbar" data-site-header>
+        <div class="container topbar-inner">
+            <a href="#home" class="brand-link" data-scroll-link>
+                <span class="brand" aria-label="DigiFintech home">
+                    <span class="brand-mark" aria-hidden="true"></span>
+                    DigiFintech
+                </span>
             </a>
-            
-            <nav class="main-nav" aria-label="Main Navigation">
-                <ul>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#ecosystem">Ecosystem</a></li>
-                    <li><a href="#technology">Technology</a></li>
-                    <li><a href="#publishers">Publishers</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact" class="btn btn-primary">Get Started</a></li>
-                </ul>
+
+            <nav class="desktop-nav" aria-label="Primary navigation">
+                <a href="#services" class="nav-link" data-nav-link>Capabilities</a>
+                <a href="#industries" class="nav-link" data-nav-link>Industries</a>
+                <a href="#technology" class="nav-link" data-nav-link>Technology</a>
+                <a href="#publishers" class="nav-link" data-nav-link>Publishers</a>
+                <a class="nav-cta" href="#contact" data-scroll-link>
+                    Start an enquiry
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <path d="M4 12 12 4M5 4h7v7" />
+                    </svg>
+                </a>
             </nav>
 
-            <button class="mobile-menu-toggle" aria-label="Open Mobile Menu" aria-expanded="false" aria-controls="mobile-nav">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="3" y1="12" x2="21" y2="12"></line>
-                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                    <line x1="3" y1="18" x2="21" y2="18"></line>
+            <button class="menu-button" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-drawer" data-menu-toggle>
+                <svg class="menu-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 7h16M4 12h16M4 17h16" />
+                </svg>
+                <svg class="close-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="m6 6 12 12M18 6 6 18" />
                 </svg>
             </button>
         </div>
-        <!-- Mobile Navigation Container -->
-        <div id="mobile-nav" class="mobile-nav-container" aria-hidden="true">
-            <nav aria-label="Mobile Navigation">
-                <ul>
-                    <li><a href="#services" class="mobile-link">Services</a></li>
-                    <li><a href="#ecosystem" class="mobile-link">Ecosystem</a></li>
-                    <li><a href="#technology" class="mobile-link">Technology</a></li>
-                    <li><a href="#publishers" class="mobile-link">Publishers</a></li>
-                    <li><a href="#about" class="mobile-link">About</a></li>
-                    <li><a href="#contact" class="btn btn-primary mobile-link" style="margin-top: var(--space-2);">Get Started</a></li>
-                </ul>
-            </nav>
-        </div>
     </header>
+
+    <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile navigation" aria-hidden="true" data-mobile-drawer>
+        <div class="drawer-head">
+            <span class="brand" aria-label="DigiFintech home">
+                <span class="brand-mark" aria-hidden="true"></span>
+                DigiFintech
+            </span>
+            <button class="drawer-close" type="button" aria-label="Close navigation menu" tabindex="-1" data-menu-close>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="m6 6 12 12M18 6 6 18" />
+                </svg>
+            </button>
+        </div>
+        <nav class="drawer-links" aria-label="Mobile primary navigation">
+            <a href="#services" data-drawer-link>Capabilities</a>
+            <a href="#industries" data-drawer-link>Industries</a>
+            <a href="#technology" data-drawer-link>Technology</a>
+            <a href="#publishers" data-drawer-link>Publishers</a>
+        </nav>
+        <a class="button-primary drawer-cta" href="#contact" data-drawer-link>
+            Start an enquiry
+            <svg viewBox="0 0 16 16" aria-hidden="true">
+                <path d="M4 12 12 4M5 4h7v7" />
+            </svg>
+        </a>
+    </aside>
 
     <main id="main-content">
