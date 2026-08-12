@@ -1,43 +1,47 @@
     </main>
 
-    <footer class="site-footer">
+    <footer class="footer" id="footer">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4>DigiFintech Solution Pvt. Ltd.</h4>
-                    <p class="text-secondary">Powering Digital Growth Through Performance, Technology & Partnerships.</p>
+            <div class="footer-top">
+                <div>
+                    <span class="brand" aria-label="DigiFintech">
+                        <span class="brand-mark" aria-hidden="true"></span>
+                        DigiFintech
+                    </span>
+                    <p class="footer-desc">
+                        Powering Digital Growth Through Performance, Technology & Partnerships.
+                    </p>
                 </div>
-                <div class="footer-col">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="#services">Performance Marketing</a></li>
-                        <li><a href="#services">Lead Generation</a></li>
-                        <li><a href="#services">Campaign Management</a></li>
-                        <li><a href="#services">Customer Support</a></li>
-                    </ul>
+                <div>
+                    <h3>Explore</h3>
+                    <nav class="footer-links" aria-label="Footer explore navigation">
+                        <a href="#services">Capabilities</a>
+                        <a href="#industries">Industries</a>
+                        <a href="#technology">Technology</a>
+                        <a href="#publishers">Publishers</a>
+                    </nav>
                 </div>
-                <div class="footer-col">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#technology">Technology Vision</a></li>
-                        <li><a href="#publishers">Publisher Network</a></li>
-                    </ul>
+                <div>
+                    <h3>Capabilities</h3>
+                    <nav class="footer-links" aria-label="Footer capabilities navigation">
+                        <a href="#services">Performance Marketing</a>
+                        <a href="#services">Lead Generation</a>
+                        <a href="#services">Campaign Management</a>
+                        <a href="#services">Customer Support</a>
+                    </nav>
                 </div>
-                <div class="footer-col">
-                    <h4>Contact</h4>
-                    <ul>
-                        <li>Website: <a href="https://digifintech.in">digifintech.in</a></li>
-                        <li>HQ: Rewa, Madhya Pradesh, India</li>
-                    </ul>
+                <div>
+                    <h3>Connect</h3>
+                    <nav class="footer-links" aria-label="Footer connect navigation">
+                        <a href="https://digifintech.in">digifintech.in</a>
+                        <span>HQ: Rewa, Madhya Pradesh, India</span>
+                        <a href="#home" style="margin-top: 1rem;">Back to top <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7" /></svg></a>
+                    </nav>
                 </div>
             </div>
-            
             <div class="footer-bottom">
-                <p>&copy; <?php echo date('Y'); ?> DigiFintech Solution Private Limited. All rights reserved.</p>
-                <div class="legal-links">
-                    <small>CIN: U78300MP2024PTC072576 | RoC-Gwalior</small>
-                </div>
+                <span>&copy; <?php echo date('Y'); ?> DigiFintech Solution Private Limited. All rights reserved.</span>
+                <span>CIN: U78300MP2024PTC072576 | RoC-Gwalior</span>
             </div>
         </div>
     </footer>
