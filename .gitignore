@@ -1,0 +1,36 @@
+# Environments
+.env
+.env.*
+
+# Logs
+*.log
+php-error.log
+
+# Directories
+vendor/
+node_modules/
+uploads/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Database dumps
+*.sql
+*.sqlite
+
+# Local config containing secrets
+config.local.php
+
+includes/config.php

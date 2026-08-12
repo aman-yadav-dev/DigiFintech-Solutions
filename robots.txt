@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /includes/
+Disallow: /api/
+Allow: /
+
+Sitemap: https://digifintech.in/sitemap.xml
