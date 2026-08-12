@@ -66,24 +66,33 @@ try {
 // 4. Rate Limiting (IP based via MySQL)
 $ipAddress = $_SERVER['REMOTE_ADDR'] ?? '0.0.0.0';
 try {
-    // Cleanup old rate limits (older than 24 hours) to prevent unbounded growth
+    // Cleanup old rate limits asynchronously or piggy-back (older than 24 hours)
     $pdo->exec("DELETE FROM rate_limits WHERE last_submit_time < DATE_SUB(NOW(), INTERVAL 24 HOUR)");
 
-    // Check rate limit for this IP (1 submission per 30 seconds)
-    $stmt = $pdo->prepare("SELECT UNIX_TIMESTAMP(last_submit_time) as last_time FROM rate_limits WHERE ip_address = :ip");
+    // Begin transaction for atomic rate limit check
+    $pdo->beginTransaction();
+
+    // Check rate limit for this IP (1 submission per 30 seconds) using a locking read
+    $stmt = $pdo->prepare("SELECT UNIX_TIMESTAMP(last_submit_time) as last_time FROM rate_limits WHERE ip_address = :ip FOR UPDATE");
     $stmt->execute([':ip' => $ipAddress]);
     $row = $stmt->fetch();
     
     $currentTime = time();
     if ($row && ($currentTime - $row['last_time']) < 30) {
+        $pdo->rollBack();
         sendResponse('error', 'You are submitting too fast. Please wait a moment.', 429);
     }
     
     // Update or insert rate limit record
     $updStmt = $pdo->prepare("INSERT INTO rate_limits (ip_address) VALUES (:ip) ON DUPLICATE KEY UPDATE last_submit_time = CURRENT_TIMESTAMP");
     $updStmt->execute([':ip' => $ipAddress]);
+    
+    $pdo->commit();
 
 } catch (PDOException $e) {
+    if ($pdo->inTransaction()) {
+        $pdo->rollBack();
+    }
     error_log('Rate Limit DB Error: ' . $e->getMessage());
     // Fail closed or open? We fail closed to prevent spam if DB has an issue.
     sendResponse('error', 'Service unavailable. Please try again later.', 500);
